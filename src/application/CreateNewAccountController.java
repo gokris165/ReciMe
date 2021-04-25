@@ -76,7 +76,7 @@ public class CreateNewAccountController
 		if(!isLegal())
 			return;
 		
-		model.classes.DbWriter.writeUserData(username, password, "src/model/data/userdata.json");
+		model.classes.DbWriter.writeUserData(username, password, "/Users/mustafaqazi/SJSU /SP21/ReciMe/src/model/data/userdata.json");
 		
 		// Close pop-up window 
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

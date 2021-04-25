@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,6 +17,8 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <Button layoutX="446.0" layoutY="297.0" mnemonicParsing="false" onAction="#sceneChangeToMainMenu" prefHeight="34.0" prefWidth="191.0" text="Back to Menu" />
+            <TextField fx:id="ingredients" layoutX="460.0" layoutY="112.0" prefHeight="27.0" prefWidth="161.0" />
+            <Button layoutX="456.0" layoutY="234.0" mnemonicParsing="false" onAction="#sceneChangetoSearchResults" prefHeight="27.0" prefWidth="169.0" text="Search" />
          </children>
       </AnchorPane>
    </children>

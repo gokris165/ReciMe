@@ -1,13 +1,19 @@
 package model.classes;
 
+import java.util.ArrayList;
 import java.util.Iterator;
-
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 @SuppressWarnings("unchecked")
-public class DbReader extends DbConnectionAbs
+public class DbReader extends DbConnectionAbs	
 {
+	static JSONParser parser = new JSONParser();
 	/*
 	 * This method reads a JSONArray object and returns its contents in
 	 * the form of a JSONArray object. 
@@ -46,7 +52,6 @@ public class DbReader extends DbConnectionAbs
 		return null;
 	}
 	
-	
 	/*
 	 * This method will see if 2 user account JSONObjects are equal.
 	 */
@@ -58,4 +63,41 @@ public class DbReader extends DbConnectionAbs
 		String secondPass = (String) second.get("password");
 		return ( (firstUser.equals(secondUser)) && (firstPass.equals(secondPass)));
 	}
+	
+	/*
+	 * This method will search for and return all recipes that match a set of ingredients
+	 */
+	public static ArrayList<String> findRecipeMatches(String[] ingredients)
+	{
+		ArrayList<String> matches = new ArrayList<String>();
+		
+		JSONObject j = (JSONObject) getParser("../model/classes/recipes_raw_nosource_fn.json");
+		int counter = 0;
+		
+		Iterator<Object> keys = (Iterator<Object>) j.keySet();
+		
+		while(keys.hasNext()) {
+			if(counter == 8)
+				break;
+			Object key = keys.next();
+			JSONObject recipe = (JSONObject) j.get(key);
+			String[] recipeIngredients = (String[]) recipe.get("ingredients");
+			String rIngredients = String.join(null, recipeIngredients);
+			
+			for(String s : ingredients) {
+				if(rIngredients.contains(s)) {
+					counter++;
+					matches.add((String) key);
+					break;
+				}
+			}
+			
+		}
+		
+		System.out.println(matches.toString());
+		
+		return matches;
+	}
+
+
 }
