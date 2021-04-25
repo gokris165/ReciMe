@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class TutorialController 
+public class TutorialController extends MainMenuController
 {
 	/*
 	 * This method changes the scene to the main menu
@@ -25,4 +25,6 @@ public class TutorialController
 		window.setScene(mainMenuScene);
 		window.show();
 	}
+	
+	
 }

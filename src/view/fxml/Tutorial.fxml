@@ -18,7 +18,7 @@
          <left>
             <VBox alignment="BASELINE_CENTER" prefHeight="768.0" prefWidth="60.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#sceneChangeToLoginPage" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/menu_button_orange.png" />
                      </image>
@@ -26,7 +26,7 @@
                         <Insets top="33.0" />
                      </VBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#sceneChangeToEnterIngredients" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/lookup_button_orange.png" />
                      </image>
@@ -42,7 +42,7 @@
                         <Insets top="50.0" />
                      </VBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#sceneChangeToTutorials" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../assets/play_button_light.png" />
                      </image>
@@ -65,7 +65,7 @@
                         </ImageView>
                      </children>
                   </HBox>
-                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="708.0" prefWidth="964.0" style="-fx-background-color: white;" vbarPolicy="ALWAYS">
+                  <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="708.0" prefWidth="964.0" style="-fx-background-color: transparent;" vbarPolicy="ALWAYS">
                      <content>
                         <HBox alignment="TOP_CENTER" prefHeight="1200.0" prefWidth="964.0" style="-fx-background-color: white;">
                            <children>
