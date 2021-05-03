@@ -35,13 +35,13 @@ public class LoginPageController
 		if(!validLogin())
 			return;
 		
-		StackPane mainMenuPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/MainMenu.fxml"));
-		Scene mainMenuScene = new Scene(mainMenuPane,1080,630);
+		StackPane EnterIngredientsPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/EnterIngredients.fxml"));
+		Scene EnterIngredientsScene = new Scene(EnterIngredientsPane,1080,630);
 		
 		//This line is to get the Stage information from the event
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		
-		window.setScene(mainMenuScene);
+		window.setScene(EnterIngredientsScene);
 		window.show();
 	}
 	
@@ -62,6 +62,7 @@ public class LoginPageController
 			displayErrorMessage();
 		else
 			hideErrorMessage();
+		System.out.println(valid);
 		return valid;
 	}
 	

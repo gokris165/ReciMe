@@ -8,13 +8,13 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.scene.input.MouseEvent;
+
 public class MainMenuController 
 {
 	/*
 	 * This method changes the scene to the login page.
 	 */
-	public void sceneChangeToLoginPage(MouseEvent  event) throws IOException
+	public void sceneChangeToLoginPage(ActionEvent event) throws IOException
 	{
 		StackPane loginPagePane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/LoginPage.fxml"));
 		Scene loginPageScene = new Scene(loginPagePane,1080,630);
@@ -30,7 +30,7 @@ public class MainMenuController
 	/*
 	 * This method changes the scene to the tutorials page.
 	 */
-	public void sceneChangeToTutorials(MouseEvent event) throws IOException
+	public void sceneChangeToTutorials(ActionEvent event) throws IOException
 	{
 		StackPane TutorialsPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/Tutorial.fxml"));
 		Scene tutorialScene = new Scene(TutorialsPane,1080,630);
@@ -46,7 +46,7 @@ public class MainMenuController
 	/*
 	 * This method changes the scene to the Enter Ingredients page.
 	 */
-	public void sceneChangeToEnterIngredients(MouseEvent event) throws IOException
+	public void sceneChangeToEnterIngredients(ActionEvent event) throws IOException
 	{
 		StackPane IngredientsPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/EnterIngredients.fxml"));
 		Scene IngredientsScene = new Scene(IngredientsPane,1080,630);
@@ -62,7 +62,7 @@ public class MainMenuController
 	/*
 	 * This method closes the program.
 	 */
-	public void exitButton(MouseEvent event)
+	public void exitButton(ActionEvent event)
 	{
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.close();
