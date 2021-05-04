@@ -35,7 +35,7 @@ public class LoginPageController
 		if(!validLogin())
 			return;
 		
-		StackPane mainMenuPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/MainMenu.fxml"));
+		StackPane mainMenuPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/EnterIngredients.fxml"));
 		Scene mainMenuScene = new Scene(mainMenuPane,1080,630);
 		
 		//This line is to get the Stage information from the event

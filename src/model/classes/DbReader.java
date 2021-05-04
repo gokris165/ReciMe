@@ -1,5 +1,6 @@
 package model.classes;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.json.simple.JSONArray;
@@ -46,6 +47,20 @@ public class DbReader extends DbConnectionAbs
 		return null;
 	}
 	
+	/*
+	 * This method converts a JSONArray of string objects into an ArrayList<String>
+	 */
+	public static ArrayList<String> convertIngredients(JSONArray j)
+	{
+		if(j == null)
+			return new ArrayList<String>();
+		ArrayList<String> list = new ArrayList<String>();
+		for (int i=0; i<j.size(); i++) {
+		    list.add((String) j.get(i).toString());
+		}
+		
+		return list;
+	}
 	
 	/*
 	 * This method will see if 2 user account JSONObjects are equal.
@@ -58,4 +73,66 @@ public class DbReader extends DbConnectionAbs
 		String secondPass = (String) second.get("password");
 		return ( (firstUser.equals(secondUser)) && (firstPass.equals(secondPass)));
 	}
+	
+	
+	
+	/*
+	 * This method will search for and return all recipes that match a set of ingredients
+	 */
+	public static ArrayList<String> findRecipeMatches(String[] ingredients)
+	{
+		ArrayList<String> matches = new ArrayList<String>();
+		
+		JSONObject j = (JSONObject) getParser("src/model/data/recipes_raw_nosource_fn.json");
+		int counter = 0;
+		
+		Iterator<String> keys = j.keySet().iterator() ;
+		
+		while(keys.hasNext()) {
+			if(counter == 9)
+				break;
+			String key = keys.next();
+			JSONObject recipe = (JSONObject) j.get(key);
+			ArrayList<String> recipeIngredients = convertIngredients((JSONArray) recipe.get("ingredients"));
+			String rIngredients = String.join(", ", recipeIngredients);
+
+			if(isMatch(rIngredients, ingredients)) {
+				counter++;
+				System.out.println(key);
+				matches.add((String) key);
+			}
+		}
+			
+
+		System.out.println(matches.toString());
+		
+		return matches;
+	}
+	
+	public static boolean isMatch(String ingredients, String[] search) 
+	{
+		boolean match = true;
+		for (String s : search) {
+			if(!ingredients.contains(s)) {
+				match = false;
+				break;
+			}
+				
+		}
+		return match;
+	}
+	
+	
+	public static ArrayList<JSONObject> getMatches(ArrayList<String> matchIds)
+	{
+		ArrayList<JSONObject> result = new ArrayList<JSONObject>();
+		JSONObject j = (JSONObject) getParser("src/model/data/recipes_raw_nosource_fn.json");
+		
+		for (String i : matchIds) {
+			result.add((JSONObject) j.get(i));
+		}
+		
+		return result;
+	}
+
 }

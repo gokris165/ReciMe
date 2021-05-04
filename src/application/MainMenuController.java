@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.input.MouseEvent;
-public class MainMenuController 
+public class MainMenuController
 {
 	/*
 	 * This method changes the scene to the login page.

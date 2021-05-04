@@ -14,7 +14,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class RecipePageController 
+public class RecipePageController extends MainMenuController
 {
 	
 	private String recipeID;
@@ -51,8 +51,8 @@ public class RecipePageController
 	{
 		showRecipeButton.setVisible(false);		//Setting button visibility to false disables the button
 		
-		ingredients.setText(/*Put here the ingredients necessary in a vbox(?) on the right side of the cutting board*/);
-		instructions.setText(/*Put here the instructions on the left side of the cutting board*/);
+	//	ingredients.setText(/*Put here the ingredients necessary in a vbox(?) on the right side of the cutting board*/);
+	//	instructions.setText(/*Put here the instructions on the left side of the cutting board*/);
 		ingredientsLabel.setOpacity(1);
 		instructionsLabel.setOpacity(1);
 	}
