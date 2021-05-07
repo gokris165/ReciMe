@@ -1,20 +1,18 @@
-package application;
+package controller;
 
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class LoginPageController 
+public class LoginPageController extends ControllerAbs
 {
 	@FXML Button loginButtonID;
 	@FXML TextField userID;
@@ -35,14 +33,7 @@ public class LoginPageController
 		if(!validLogin())
 			return;
 		
-		StackPane mainMenuPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/EnterIngredients.fxml"));
-		Scene mainMenuScene = new Scene(mainMenuPane,1080,630);
-		
-		//This line is to get the Stage information from the event
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		
-		window.setScene(mainMenuScene);
-		window.show();
+		getEnterIngredientsPage();
 	}
 	
 	
@@ -86,7 +77,7 @@ public class LoginPageController
 	{
 		AnchorPane createNewAccPane = (AnchorPane)FXMLLoader.load(getClass().getResource("../view/fxml/CreateNewAccount.fxml"));
 		Scene createNewAccScene = new Scene(createNewAccPane,300,200);
-		createNewAccScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		createNewAccScene.getStylesheets().add(getClass().getResource("../application/application.css").toExternalForm());
 		
 		if(createNewAccStage == null || !createNewAccStage.isShowing())
 		{
@@ -97,15 +88,4 @@ public class LoginPageController
 		else
 			createNewAccStage.toFront();
 	}
-	
-	
-	/*
-	 * This method closes the program.
-	 */
-	public void exitButton(ActionEvent event)
-	{
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.close();
-	}
-	
 }

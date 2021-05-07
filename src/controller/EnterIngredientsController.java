@@ -1,19 +1,16 @@
-package application;
+package controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class EnterIngredientsController extends MainMenuController 
+public class EnterIngredientsController extends ControllerAbs 
 {
 	@FXML TextField ingredients;
 	
@@ -40,8 +37,6 @@ public class EnterIngredientsController extends MainMenuController
 		
 		ingredients.getScene().setRoot(root);
 		
-		resultsController.search(ingredientsOutput);
-	
-			
+		resultsController.search(ingredientsOutput);	
 	}
 }

@@ -1,27 +1,27 @@
-package application;
+package controller;
+
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebView;
 
-
-public class EmbeddedWebView extends StackPane{
+public class EmbeddedWebView extends StackPane
+{
 	
 	final private WebView webView;
-
-
     private String url;
 
-    public EmbeddedWebView() {
+    public EmbeddedWebView() 
+    {
         webView = new WebView();
         getChildren().add(webView);
     }
 
-
-
-
-    public String getUrl() {
+    
+    public String getUrl() 
+    {
         return url;
     }
 
+    
     /**
      * Loads content into the WebView from a given url.
      * The allowed url types are http, https and file.
@@ -33,7 +33,8 @@ public class EmbeddedWebView extends StackPane{
      *
      * @param url the location of the html document to be loaded.
      */
-    public void setUrl(String url) {
+    public void setUrl(String url) 
+    {
         if ( url == null || ! (url.startsWith("/") || url.startsWith("http:") || url.startsWith("https:") || url.startsWith("file:"))) {
             throw new IllegalArgumentException("url must start with one of http: file: https: or /");
         }
@@ -50,5 +51,4 @@ public class EmbeddedWebView extends StackPane{
             );
         }
     }
-
 }

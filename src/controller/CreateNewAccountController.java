@@ -1,4 +1,4 @@
-package application;
+package controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class CreateNewAccountController 
+public class CreateNewAccountController
 {
 	@FXML private Label errorLabel;
 	@FXML private TextField userID;
@@ -61,7 +61,7 @@ public class CreateNewAccountController
 		getUsername();
 		getPassword();
 		
-		if(username.length() < 1 && password.length() < 1)
+		if(username.length() < 1 || password.length() < 1)
 		{
 			displayErrorLabel();
 			return false;
