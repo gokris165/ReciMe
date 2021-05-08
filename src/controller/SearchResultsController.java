@@ -18,7 +18,6 @@ public class SearchResultsController extends ControllerAbs
 	public void search(String[] ingredients) throws IOException
 	{
 		this.matches = model.classes.DbReader.findRecipeMatches(ingredients);
-		
 		fillMatches();
 	}
 	
@@ -32,14 +31,14 @@ public class SearchResultsController extends ControllerAbs
 		Button[] buttons = new Button[] {result1, result2, result3, result4, 
 				result5, result6, result7, result8, result9};
 		
-		for(int i = 0; i < recipeMatches.size(); i++) {
+		for(int i = 0; i < recipeMatches.size(); i++) 
+		{
 			buttons[i].setText((String) recipeMatches.get(i).get("title"));
 		}
-		
-		for (Button b : buttons) {
+		for (Button b : buttons) 
+		{
 			System.out.println(b.getText());
 		}
-		
 		loader.load();
 	}
 }

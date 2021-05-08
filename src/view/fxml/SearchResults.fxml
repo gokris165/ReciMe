@@ -21,38 +21,58 @@
                   <left>
             <VBox alignment="BASELINE_CENTER" prefHeight="768.0" prefWidth="60.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getLoginPage" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/menu_button_orange.png" />
-                     </image>
+                  <StackPane prefHeight="0.0" prefWidth="0.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getLoginPage" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/menu_button_orange.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="loginLabel" onMouseClicked="#getLoginPage" onMouseEntered="#showLoginLabel" onMouseExited="#hideLoginLabel" opacity="0.0" style="-fx-background-color: white;" text="Login" />
+                     </children>
                      <VBox.margin>
                         <Insets top="33.0" />
                      </VBox.margin>
-                  </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getEnterIngredientsPage" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/lookup_button_orange.png" />
-                     </image>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="0.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getEnterIngredientsPage" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/lookup_button_orange.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="searchLabel" onMouseClicked="#getEnterIngredientsPage" onMouseEntered="#showSearchLabel" onMouseExited="#hideSearchLabel" opacity="0.0" style="-fx-background-color: white;" text="Seach" />
+                     </children>
                      <VBox.margin>
                         <Insets top="50.0" />
                      </VBox.margin>
-                  </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/favorite_button.png" />
-                     </image>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="438.0" prefHeight="0.0" prefWidth="0.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/favorite_button.png" />
+                           </image>
+                        </ImageView>
+                        <Label opacity="0.0" style="-fx-background-color: white;" text="Menu" />
+                     </children>
                      <VBox.margin>
                         <Insets top="50.0" />
                      </VBox.margin>
-                  </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getTutorialPage" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../assets/play_button_light.png" />
-                     </image>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="438.0" prefHeight="0.0" prefWidth="0.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getTutorialPage" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/play_button_light.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="tutorialLabel" onMouseClicked="#getTutorialPage" onMouseEntered="#showTutorialLabel" onMouseExited="#hideTutorialLabel" opacity="0.0" style="-fx-background-color: white;" text="Tutorial" />
+                     </children>
                      <VBox.margin>
                         <Insets top="50.0" />
                      </VBox.margin>
-                  </ImageView>
+                  </StackPane>
                </children>
             </VBox>
          </left>
