@@ -17,9 +17,6 @@ public class EnterIngredientsController extends ControllerAbs
 	
 	public void sceneChangetoSearchResults (ActionEvent event) throws IOException
 	{
-		//This line is to get the Stage information from the event
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/fxml/SearchResults.fxml"));
 		Parent root = loader.load();
 		SearchResultsController resultsController = loader.getController();
