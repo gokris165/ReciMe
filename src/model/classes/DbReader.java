@@ -13,6 +13,10 @@ public class DbReader extends DbConnectionAbs
 	 * This method reads a JSONArray object and returns its contents in
 	 * the form of a JSONArray object. 
 	 * 
+	 * This is used to read all of the existing user accounts, and then 
+	 * we can append the new user account data and use the modified
+	 * JSONArray to overwrite the user account data file.
+	 * 
 	 * Almost all of our data is being stored as a JSONArray object
 	 */
 	public static JSONArray readArray(String fileLocation)
@@ -34,6 +38,8 @@ public class DbReader extends DbConnectionAbs
 	/*
 	 * This method will search for a specific JSONObject from a JSONArray.
 	 * The method will return null if the target is not present in the JSONArray.
+	 * 
+	 * This is used to check if the user input username and password are in the database.
 	 */
 	public static JSONObject findEntry(JSONObject target, JSONArray array)
 	{
@@ -64,6 +70,7 @@ public class DbReader extends DbConnectionAbs
 	
 	/*
 	 * This method will see if 2 user account JSONObjects are equal.
+	 * Used to check if the login is valid
 	 */
 	public static boolean isEqualAccount(JSONObject first, JSONObject second)
 	{
@@ -98,17 +105,17 @@ public class DbReader extends DbConnectionAbs
 
 			if(isMatch(rIngredients, ingredients)) {
 				counter++;
-				System.out.println(key);
+//				System.out.println(key);
 				matches.add((String) key);
 			}
 		}
-			
-
-		System.out.println(matches.toString());
-		
+//		System.out.println(matches.toString());
 		return matches;
 	}
 	
+	
+	// Is this method behaving correctly??
+	// If the String ingredients contains an element of search, match = false??
 	public static boolean isMatch(String ingredients, String[] search) 
 	{
 		boolean match = true;
@@ -134,5 +141,4 @@ public class DbReader extends DbConnectionAbs
 		
 		return result;
 	}
-
 }
