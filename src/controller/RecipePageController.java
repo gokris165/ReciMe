@@ -1,36 +1,23 @@
 package controller;
 
-import java.io.IOException;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 
-public class RecipePageController// extends MainMenuController
+public class RecipePageController extends ControllerAbs
 {
-	private String recipeID;
+	@FXML private Label title;
+	@FXML private Label ingredients;
+	@FXML private Label instructions;
 	
-	@FXML Text ingredients;
-	@FXML Text instructions;
-	@FXML Button showRecipeButton;
-	@FXML Button backPageButton;
-	@FXML Label ingredientsLabel;
-	@FXML Label instructionsLabel;
-	
+	public static String titleText = "";
+	public static String ingredientsText = "";
+	public static String instructionsText = "";
 		
-	/*
-	 * This method shows the list of ingredients and instructions on how to make
-	 * the dish that the user selects when a button is clicked.
-	 */
-	public void showRecipe(ActionEvent event) throws IOException
+	@FXML
+	public void initialize()
 	{
-		showRecipeButton.setVisible(false);		//Setting button visibility to false disables the button
-		
-	//	ingredients.setText(/*Put here the ingredients necessary in a vbox(?) on the right side of the cutting board*/);
-	//	instructions.setText(/*Put here the instructions on the left side of the cutting board*/);
-		ingredientsLabel.setOpacity(1);
-		instructionsLabel.setOpacity(1);
+		title.setText(titleText);
+		ingredients.setText(ingredientsText);
+		instructions.setText(instructionsText);
 	}
 }

@@ -5,10 +5,8 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class EnterIngredientsController extends ControllerAbs 
 {
@@ -21,7 +19,6 @@ public class EnterIngredientsController extends ControllerAbs
 		Parent root = loader.load();
 		SearchResultsController resultsController = loader.getController();
 		
-		
 		//get user ingredients input and convert to array
 		String ingredientInput = ingredients.getText();
 		String[] ingredientsOutput = null;
@@ -32,8 +29,7 @@ public class EnterIngredientsController extends ControllerAbs
 			ingredientsOutput = new String[]{ingredientInput};
 		}
 		
-		ingredients.getScene().setRoot(root);
-		
+		ingredients.getScene().setRoot(root);	
 		resultsController.search(ingredientsOutput);	
 	}
 }
