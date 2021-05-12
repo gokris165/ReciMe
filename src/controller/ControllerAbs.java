@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
@@ -15,6 +16,8 @@ public abstract class ControllerAbs
 	@FXML Label loginLabel;
 	@FXML Label searchLabel;
 	@FXML Label tutorialLabel;
+	@FXML Label menuLabel;
+	@FXML Label errorLabel;
 	
 	
 	// This method changes the scene to the login page.
@@ -49,6 +52,41 @@ public abstract class ControllerAbs
 		primaryStage.show();
 	}
 	
+	
+	// This method changes the scene to the recipe page.
+	public void getRecipePage() throws IOException
+	{
+		StackPane recipePagePane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/RecipePage.fxml"));
+		Scene recipePageScene = new Scene(recipePagePane,1080,630);
+		
+		primaryStage.setScene(recipePageScene);
+		primaryStage.show();
+	}	
+	
+	
+	// This method changes the scene to the main menu page.
+	public void getMainMenuPage() throws IOException
+	{
+		StackPane mainMenuPane = (StackPane)FXMLLoader.load(getClass().getResource("../view/fxml/MainMenu.fxml"));
+		Scene mainMenuScene = new Scene(mainMenuPane,1080,630);
+			
+		initializeMainMenuPage();
+		
+		primaryStage.setScene(mainMenuScene);
+		primaryStage.show();
+	}
+	
+	
+	// This method initializes the main menu page with all the relevant recommended recipes.
+	@SuppressWarnings("unused")
+	private void initializeMainMenuPage() throws IOException
+	{
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/fxml/MainMenu.fxml"));
+		Parent root = (Parent)loader.load();
+		MainMenuController mmControl = loader.getController();
+		mmControl.initialize();
+	}
+		
 	
 	// This method closes the program.
 	public void closeApplication()
@@ -87,5 +125,25 @@ public abstract class ControllerAbs
 	public void hideTutorialLabel()
 	{
 		tutorialLabel.setOpacity(0.0);
+	}
+	
+	
+	public void showMenuLabel()
+	{
+		menuLabel.setOpacity(0.8);
+	}
+	public void hideMenuLabel()
+	{
+		menuLabel.setOpacity(0.0);
+	}
+	
+	
+	public void displayErrorMessage()
+	{
+		errorLabel.setOpacity(1);
+	}
+	public void hideErrorMessage()
+	{
+		errorLabel.setOpacity(0);
 	}
 }

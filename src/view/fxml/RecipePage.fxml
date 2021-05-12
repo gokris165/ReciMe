@@ -61,7 +61,7 @@
                               <Insets />
                            </StackPane.margin>
                         </ImageView>
-                        <Label opacity="0.0" style="-fx-background-color: white;" />
+                        <Label fx:id="menuLabel" onMouseClicked="#getMainMenuPage" onMouseEntered="#showMenuLabel" onMouseExited="#hideMenuLabel" opacity="0.0" style="-fx-background-color: white;" text="Menu" />
                      </children>
                      <VBox.margin>
                         <Insets top="50.0" />
