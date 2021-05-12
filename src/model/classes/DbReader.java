@@ -53,6 +53,7 @@ public class DbReader extends DbConnectionAbs
 		return null;
 	}
 	
+	
 	/*
 	 * This method converts a JSONArray of string objects into an ArrayList<String>
 	 */
@@ -61,17 +62,15 @@ public class DbReader extends DbConnectionAbs
 		if(j == null)
 			return new ArrayList<String>();
 		ArrayList<String> list = new ArrayList<String>();
-		for (int i=0; i<j.size(); i++) {
+		for (int i = 0; i < j.size(); i++) 
+		{
 		    list.add((String) j.get(i).toString());
 		}
-		
 		return list;
 	}
 	
-	/*
-	 * This method will see if 2 user account JSONObjects are equal.
-	 * Used to check if the login is valid
-	 */
+	
+	// This method will see if 2 user account JSONObjects are equal.
 	public static boolean isEqualAccount(JSONObject first, JSONObject second)
 	{
 		String firstUser = (String) first.get("username");
@@ -80,7 +79,6 @@ public class DbReader extends DbConnectionAbs
 		String secondPass = (String) second.get("password");
 		return ( (firstUser.equals(secondUser)) && (firstPass.equals(secondPass)));
 	}
-	
 	
 	
 	/*
@@ -105,17 +103,13 @@ public class DbReader extends DbConnectionAbs
 
 			if(isMatch(rIngredients, ingredients)) {
 				counter++;
-//				System.out.println(key);
 				matches.add((String) key);
 			}
 		}
-//		System.out.println(matches.toString());
 		return matches;
 	}
 	
 	
-	// Is this method behaving correctly??
-	// If the String ingredients contains an element of search, match = false??
 	public static boolean isMatch(String ingredients, String[] search) 
 	{
 		boolean match = true;
@@ -134,11 +128,25 @@ public class DbReader extends DbConnectionAbs
 	{
 		ArrayList<JSONObject> result = new ArrayList<JSONObject>();
 		JSONObject j = (JSONObject) getParser("src/model/data/recipes_raw_nosource_fn.json");
-		
-		for (String i : matchIds) {
+		for (String i : matchIds) 
+		{
 			result.add((JSONObject) j.get(i));
 		}
-		
 		return result;
+	}
+	
+	
+	// This methods reads the recommendations file and returns an ArrayList<JSONObject> 
+	// containing all the recommended recipes.
+	public static ArrayList<JSONObject> readRecommendations(String fileLocation)
+	{
+		JSONArray jsArray = readArray(fileLocation);
+		ArrayList<JSONObject> list = new ArrayList<>();
+		for(int i = 0; i < jsArray.size(); i++)
+		{
+			JSONObject obj = (JSONObject)jsArray.get(i);
+			list.add(obj);
+		}
+		return list;
 	}
 }

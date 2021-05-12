@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -17,7 +16,6 @@ public class LoginPageController extends ControllerAbs
 	@FXML Button loginButtonID;
 	@FXML TextField userID;
 	@FXML TextField passID;
-	@FXML Label errorLabel;
 	Stage createNewAccStage = null;
 	
 	
@@ -33,7 +31,7 @@ public class LoginPageController extends ControllerAbs
 		if(!validLogin())
 			return;
 		
-		getEnterIngredientsPage();
+		getMainMenuPage();
 	}
 	
 	
@@ -54,18 +52,6 @@ public class LoginPageController extends ControllerAbs
 		else
 			hideErrorMessage();
 		return valid;
-	}
-	
-	
-	public void displayErrorMessage()
-	{
-		errorLabel.setOpacity(1);
-	}
-	
-	
-	public void hideErrorMessage()
-	{
-		errorLabel.setOpacity(0);
 	}
 	
 	

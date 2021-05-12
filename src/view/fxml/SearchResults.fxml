@@ -54,7 +54,7 @@
                               <Image url="@../assets/favorite_button.png" />
                            </image>
                         </ImageView>
-                        <Label opacity="0.0" style="-fx-background-color: white;" text="Menu" />
+                        <Label fx:id="menuLabel" onMouseClicked="#getMainMenuPage" onMouseEntered="#showMenuLabel" onMouseExited="#hideMenuLabel" opacity="0.0" style="-fx-background-color: white;" text="Menu" />
                      </children>
                      <VBox.margin>
                         <Insets top="50.0" />
@@ -112,7 +112,7 @@
                               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="700.0" HBox.hgrow="ALWAYS">
                                  <children>
                                     <TextFlow prefHeight="50.0" prefWidth="700.0" textAlignment="CENTER" />
-                                    <Label prefHeight="29.0" prefWidth="79.0" text="Results ">
+                                    <Label alignment="CENTER" prefHeight="35.0" prefWidth="116.0" text="Results ">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
