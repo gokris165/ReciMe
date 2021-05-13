@@ -71,7 +71,7 @@
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getTutorialPage" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/play_button_light.png" />
+                              <Image url="@../assets/play_button_orange.png" />
                            </image>
                            <StackPane.margin>
                               <Insets />

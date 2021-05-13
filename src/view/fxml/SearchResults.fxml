@@ -38,7 +38,7 @@
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getEnterIngredientsPage" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/lookup_button_orange.png" />
+                              <Image url="@../assets/lookup_button_light.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="searchLabel" onMouseClicked="#getEnterIngredientsPage" onMouseEntered="#showSearchLabel" onMouseExited="#hideSearchLabel" opacity="0.0" style="-fx-background-color: white;" text="Seach" />
@@ -64,7 +64,7 @@
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#getTutorialPage" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../assets/play_button_light.png" />
+                              <Image url="@../assets/play_button_orange.png" />
                            </image>
                         </ImageView>
                         <Label fx:id="tutorialLabel" onMouseClicked="#getTutorialPage" onMouseEntered="#showTutorialLabel" onMouseExited="#hideTutorialLabel" opacity="0.0" style="-fx-background-color: white;" text="Tutorial" />
