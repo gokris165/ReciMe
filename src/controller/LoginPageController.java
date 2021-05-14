@@ -31,7 +31,7 @@ public class LoginPageController extends ControllerAbs
 		if(!validLogin())
 			return;
 		
-		getMainMenuPage();
+		getEnterIngredientsPage();
 	}
 	
 	
