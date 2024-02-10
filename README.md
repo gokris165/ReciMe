@@ -16,9 +16,8 @@ A Recipe Recommendation app to suggest recipes based on the ingredients you want
 1. Eclipse IDE
 
 # Screenshots
-Login Page
-Home Page
-Recipe Page
-Tutorial Page
-
-# Credits
+Login Page <br>
+Home Page <br>
+Recommendations <br>
+Recipe Page <br>
+Tutorial Page <br>
