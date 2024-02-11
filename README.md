@@ -8,12 +8,12 @@ A Recipe Recommendation app to suggest recipes based on the ingredients you want
 - Supports multiple user accounts with password authentication
 
 # Installation Guide
-1. Git Clone the repository
+1. Git Clone this repository
+`https://github.com/gokris165/ReciMe.git`
 2. Install JavaFX
-3. Run the command on the commandline
-
-# Contribution Guide
-1. Eclipse IDE
+3. Install Eclipse IDE
+4. Install JavaFX Plugin for Eclipse IDE
+5. Configure Eclipse IDE to run JavaFX Applications
 
 # Screenshots
 Login Page <br>
