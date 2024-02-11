@@ -9,7 +9,9 @@ A Recipe Recommendation app to suggest recipes based on the ingredients you want
 
 # Installation Guide
 1. Git Clone this repository
-```git clone https://github.com/gokris165/ReciMe.git```
+```
+git clone https://github.com/gokris165/ReciMe.git
+```
 2. Install JavaFX
 3. Install Eclipse IDE
 4. Install JavaFX Plugin for Eclipse IDE
