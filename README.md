@@ -14,8 +14,8 @@ A Recipe Recommendation app to suggest recipes based on the ingredients you want
 4. Install JavaFX Plugin for Eclipse IDE from Eclipse Marketplace
 5. Install [json_simple-1.1.jar](https://code.google.com/archive/p/json-simple/downloads)
 6. Configure Eclipse IDE to run JavaFX Applications
-  1. Import JavaFX libraries
-  2. Setup VM Arguments in Run Configurations
+    1. Import necessary libraries
+    2. Setup VM Arguments in Run Configurations
 
 # Screenshots
 Login Page <br>
