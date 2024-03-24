@@ -18,7 +18,7 @@ This was built in a team of 4 in 2021 using Java, JavaFX, and EclipseIDE.
 7. Configure Eclipse IDE to run JavaFX Applications <br>
     - Eclipse IDE > Project > Properties > Java Build Path > Libraries > Add Library > User Libraries <br>
     <figure>
-        <img src="assets/BuildPath.PNG" width=700>
+        <img src="assets/BuildPath.PNG" width=700> <br>
         <figcaption>End result should look like this with all the necessary libraries</figcaption>
     </figure>
 8. Setup VM Arguments in Run Configurations <br>
