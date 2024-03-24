@@ -1,1 +1,5 @@
 /bin/
+*.class
+.classpath
+json_simple-1.1.jar
+src/model/data/recommendations.json
